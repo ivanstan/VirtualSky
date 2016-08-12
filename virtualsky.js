@@ -2942,6 +2942,11 @@ VirtualSky.prototype.addPointer = function(input){
 	}
 	return (this.pointers.length);
 }
+VirtualSky.prototype.setAzimuth = function(inc){
+	this.az_off = inc;
+	this.draw();
+	return this;
+}
 VirtualSky.prototype.changeAzimuth = function(inc){
 	this.az_off += (typeof inc==="number") ? inc : 5;
 	this.draw();
