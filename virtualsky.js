@@ -259,8 +259,9 @@ function VirtualSky(input){
 	@*/
 
 	this.q = $.query();    // Query string
-	this.dir = $('script[src*=virtualsky]').attr('src').match(/^.*\//);  // the JS file path
-	this.dir = this.dir && this.dir[0] || ""; // set dir to match or ""
+	this.dir = window.location.pathname + 'vendor/virtualsky/'; // set dir to match or ""
+	this.langurl = this.dir + "lang/%LANG%.json";	// The location of the language files
+
 	this.langurl = this.dir + "lang/%LANG%.json";	// The location of the language files
 
 	this.id = '';						// The ID of the canvas/div tag - if none given it won't display
@@ -716,8 +717,7 @@ function VirtualSky(input){
 	this.starnames = {};
 
 	// Identify the default base directory
-	this.dir = $('script[src*=virtualsky]').attr('src').match(/^.*\//);  // the JS file path
-	this.dir = this.dir && this.dir[0] || ""; // set dir to match or ""
+	this.dir = window.location.pathname + 'vendor/virtualsky/'; // set dir to match or ""
 
 	// Define extra files (JSON/JS)
 	this.file = {
