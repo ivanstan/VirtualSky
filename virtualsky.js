@@ -259,7 +259,10 @@ function VirtualSky(input){
 	@*/
 
 	this.q = $.query();    // Query string
-	this.dir = window.location.pathname + 'vendor/virtualsky/'; // set dir to match or ""
+	this.dir = window.location.pathname.replace('index-dev.html', '');
+	this.dir = this.dir.replace('index.html', '');
+	this.dir += 'vendor/virtualsky/'; // set dir to match or ""
+
 	this.langurl = this.dir + "lang/%LANG%.json";	// The location of the language files
 
 	this.langurl = this.dir + "lang/%LANG%.json";	// The location of the language files
@@ -717,7 +720,9 @@ function VirtualSky(input){
 	this.starnames = {};
 
 	// Identify the default base directory
-	this.dir = window.location.pathname + 'vendor/virtualsky/'; // set dir to match or ""
+	this.dir = window.location.pathname.replace('index-dev.html', '');
+	this.dir = this.dir.replace('index.html', '');
+	this.dir += 'vendor/virtualsky/'; // set dir to match or ""
 
 	// Define extra files (JSON/JS)
 	this.file = {
